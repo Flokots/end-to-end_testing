@@ -67,8 +67,9 @@ _Finding the links, titles, imageURLs and prices separately_
 ### Project Setup
 1. Clone this repository.
 2. `cd` into the cloned repository.
-3. Run `npx cypress run`
-4. Have fun exploring!
+3. Run `npm i`
+4. Run `npx cypress run`
+5. Have fun exploring!
 
 ### Author
 
