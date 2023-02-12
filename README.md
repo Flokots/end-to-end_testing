@@ -64,6 +64,12 @@ _Finding the links, titles, imageURLs and prices separately_
 - Extract the product prices. Product prices are in the `div` element with `lh30 cl-dark weight-300 fs-medium-small` class. 
 - Log the extracted prices.
 
+### Project Setup
+1. Clone this repository.
+2. `cd` into the cloned repository.
+3. Run `npx cypress run`
+4. Have fun exploring!
+
 ### Author
 
 [Florence Kotohoyoh](https://github.com/Flokots)
