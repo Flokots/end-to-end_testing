@@ -1,6 +1,8 @@
 describe("home page", () => {
     beforeEach(() => {
         cy.visit("https://butopea.com")
+
+        // Throw an error to fail the tests. 
         cy.on('fail', (error) => {
             cy.log('This test has failed!', error.message)
             throw error
@@ -12,7 +14,7 @@ describe("home page", () => {
         it("the middle square contains some text and a button", () => {
 
             // Find the p element and extract the text. Ensure there's text.
-            cy.get(".banner-square-overlay-containerss")
+            cy.get(".banner-square-overlay-container")
                 .find("p")
                 .invoke("text")
                 .as("textFunction")

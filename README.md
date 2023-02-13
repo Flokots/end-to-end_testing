@@ -16,17 +16,18 @@ The tests should load the website, perform some actions, check for existence of 
 
 ### Development process
 
-Load the website
+Before each test:
+* Load the website.
+* Fail the test if element not found.
 
+NOTE: Screenshots are taken automatically for failed tests. 
 #### The Homepage section
 
 1.  Find the middle square by its `banner-square-overlay-container` class.
-2.  Fail the test if button and text not found.
-3.  Find the paragraph element and _individually_ extact the text.
-4.  Find the button by the button tag and home button class and extract only the button label.
-5.  Find the square on the right that's supposed to have an image by the `(//div[class='banner-square-image'])[2]` xpath.
-6.  Fail the tests if image not found.
-7.  Find image by the `img` tag and `block` class and extract the url.
+2.  Find the paragraph element and _individually_ extact the text.
+3.  Find the button by the button tag and home button class and extract only the button label.
+4.  Find the square on the right that's supposed to have an image by the `(//div[class='banner-square-image'])[2]` xpath.
+5.  Find image by the `img` tag and `block` class and extract the url.
 
 #### New Products Section
 
@@ -34,7 +35,6 @@ _Finding the links, titles, imageURLs and prices separately_
 
 **Product Links**
 
-- Fail the tests if the links are not found.
 - Click on the new product's tab
 - Get each product's column which are `div` elements with the class `col-sm-6 col-xs-6 flex col-md-3`
 - Extract the product links. Product links have the `data-testid=productLink` attribute.
@@ -42,7 +42,6 @@ _Finding the links, titles, imageURLs and prices separately_
 
 **Product Titles**
 
-- Fail the tests if the titles are not found.
 - Click on the new product's tab
 - Get each product's column which are `div` elements with the class `col-sm-6 col-xs-6 flex col-md-3`
 - Extract the product titles. Product titles have the `p` tag and `product-name` class.
@@ -50,7 +49,6 @@ _Finding the links, titles, imageURLs and prices separately_
 
 **Image URLs**
 
-- Fail the tests if the image URLs are not found.
 - Click on the new product's tab
 - Get each product's column which are `div` elements with the class `col-sm-6 col-xs-6 flex col-md-3`
 - Extract the product titles. Product titles have the `img` tag and `preview-img-item product-image__thumb` class.
@@ -58,7 +56,6 @@ _Finding the links, titles, imageURLs and prices separately_
 
 **Product Prices**
 
-- Fail the tests if the prices are not found.
 - Click on the new product's tab
 - Get each product's column which are `div` elements with the class `col-sm-6 col-xs-6 flex col-md-3`
 - Extract the product prices. Product prices are in the `div` element with `lh30 cl-dark weight-300 fs-medium-small` class. 
