@@ -1,19 +1,18 @@
 describe("home page", () => {
     beforeEach(() => {
-        cy.visit("https://butopea.com");
+        cy.visit("https://butopea.com")
+        cy.on('fail', (error) => {
+            cy.log('This test has failed!', error.message)
+            throw error
+        })
     });
 
     context("Banner section", () => {
         // Middle square
         it("the middle square contains some text and a button", () => {
-            // Fail the test if button and text not found
-            cy.on("fail", (err, runnable) => {
-                console.log(err.message);
-                return false;
-            });
 
             // Find the p element and extract the text. Ensure there's text.
-            cy.get(".banner-square-overlay-container")
+            cy.get(".banner-square-overlay-containerss")
                 .find("p")
                 .invoke("text")
                 .as("textFunction")
@@ -42,11 +41,6 @@ describe("home page", () => {
 
         // Right square
         it("the right square contains an image", () => {
-            // Fail the test if image not found
-            cy.on("fail", (err, runnable) => {
-                console.log(err.message);
-                return false;
-            });
 
             // Finds image and extracts the image url
             cy.xpath("(//div[@class='banner-square-image'])[2]")
@@ -67,11 +61,6 @@ describe("home page", () => {
 
     context("New Products section", () => {
         it("extracts product links", () => {
-            // Fail the tests if links not found
-            cy.on("fail", (err, runnable) => {
-                console.log(err.message);
-                return false;
-            });
 
             // Clicks on the new products tab, gets each product's column and extracts the link
             cy.get("button.secondary-font")
@@ -97,10 +86,6 @@ describe("home page", () => {
 
         // Clicks on the new products tab, gets each product's column and extracts the title
         it("extracts product titles", () => {
-            cy.on("fail", (err, runnable) => {
-                console.log(err.message);
-                return false;
-            });
 
             cy.get("button.secondary-font")
                 .contains("Új termékek")
@@ -123,11 +108,6 @@ describe("home page", () => {
 
         // Clicks on the new products tab, gets each product's column and extracts the imageURL
         it("extracts image URLs", () => {
-            cy.on("fail", (err, runnable) => {
-                cy.wait(3000).screenshot("Failed Image URLs");
-                console.log(err.message);
-                return false;
-            });
 
             cy.get("button.secondary-font")
                 .contains("Új termékek")
@@ -150,11 +130,6 @@ describe("home page", () => {
 
         // Clicks on the new products tab, gets each product's column and extracts the price
         it("extracts product prices", () => {
-            cy.on("fail", (err, runnable) => {
-                cy.wait(3000).screenshot("Failed Product Prices");
-                console.log(err.message);
-                return false;
-            });
 
             cy.get("button.secondary-font")
                 .contains("Új termékek")
